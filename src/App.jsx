@@ -43,12 +43,10 @@ const services = [
 ]
 
 const galleryImages = [
-  { id: 1, title: 'Treatment Room', desc: 'Our state-of-the-art facility' },
-  { id: 2, title: 'Endermologie', desc: 'Advanced body contouring' },
-  { id: 3, title: 'Relaxation Area', desc: 'Peaceful ambiance' },
-  { id: 4, title: 'Skincare Products', desc: 'Premium brands we use' },
-  { id: 5, title: 'Facial Treatment', desc: 'Rejuvenating skincare' },
-  { id: 6, title: 'Nail Station', desc: 'Beautiful nail art' },
+  { id: 1, title: 'Treatment Room', desc: 'Our state-of-the-art facility', image: '/gallery-1.png' },
+  { id: 2, title: 'Endermologie', desc: 'Advanced body contouring', image: '/gallery-2.png' },
+  { id: 3, title: 'Relaxation Area', desc: 'Peaceful ambiance', image: '/gallery-3.png' },
+  { id: 4, title: 'Skincare Products', desc: 'Premium brands we use', image: '/gallery-4.png' },
 ]
 
 function App() {
@@ -85,8 +83,9 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-brand-pink/20 to-brand-light/30"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOGM5Ljk0MSAwIDE4LTguMDU5IDE4LTE4cy04LjA1OS0xOC0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNHMxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNCAxNHoiIGZpbGw9IiMwMEJDRDQiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9nPjwvc3ZnPg==')] opacity30"></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/hero.png')" }}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/40 via-brand-pink/30 to-brand-light/20"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -275,11 +274,13 @@ function App() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-gradient-to-br from-brand-primary/20 to-brand-pink/20"
+                className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square"
               >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Sparkles className="w-16 h-16 text-brand-primary/50" />
-                </div>
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <div>
                     <h3 className="text-white font-bold text-xl">{item.title}</h3>
