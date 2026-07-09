@@ -83,9 +83,9 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/hero.png')" }}></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/40 via-brand-pink/30 to-brand-light/20"></div>
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-3xl scale-110" style={{ backgroundImage: "url('/hero.png')" }}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/60 via-brand-pink/50 to-brand-light/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
